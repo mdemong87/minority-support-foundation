@@ -30,7 +30,7 @@ export function SiteHeader({ onDonateClick }) {
     <>
       {/* Top Announcement & Information Bar */}
       <div className="bg-[var(--brand-deep)] px-4 py-2 text-xs font-semibold text-white/90 border-b border-white/10">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 lg:px-8">
           <div className="flex items-center gap-6 overflow-x-auto whitespace-nowrap py-0.5">
             <span className="flex items-center gap-1.5 text-[var(--brand-soft)]">
               <FiShield className="shrink-0" />
@@ -60,7 +60,7 @@ export function SiteHeader({ onDonateClick }) {
             <Link
               href="/#donate"
               onClick={onDonateClick}
-              className="inline-flex items-center gap-1 rounded-full bg-[var(--brand-soft)] px-3 py-1 text-[11px] font-bold text-[var(--brand-deep)] hover:brightness-105 transition"
+              className="hidden items-center gap-1 rounded-full bg-[var(--brand-soft)] px-3 py-1 text-[11px] font-bold text-[var(--brand-deep)] hover:brightness-105 transition "
             >
               <FiHeart className="text-red-600 fill-red-600" /> Quick Donate
             </Link>
@@ -112,6 +112,7 @@ export function SiteHeader({ onDonateClick }) {
             <Link
               href="/#donate"
               onClick={onDonateClick}
+              style={{ color: "white" }}
               className="premium-cta flex items-center gap-1.5 rounded-full bg-[var(--brand)] px-5 py-2.5 text-sm font-bold text-white"
             >
               Donate Now <FiArrowUpRight />
