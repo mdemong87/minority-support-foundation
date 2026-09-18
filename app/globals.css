@@ -1,0 +1,275 @@
+@import 'tailwindcss';
+
+@theme inline {
+  --font-sans: var(--font-body);
+  --font-serif: var(--font-display);
+  --color-background: var(--paper);
+  --color-foreground: var(--ink);
+}
+
+:root {
+  color-scheme: light;
+  --brand: #24a900;
+  --brand-hover: #1e8d00;
+  --brand-deep: #10105b;
+  --brand-deep-light: #181878;
+  --brand-soft: #fff200;
+  --paper: #fcfcfa;
+  --sage: #eef7e9;
+  --sand: #f5f7f2;
+  --ink: #101426;
+  --ink-muted: #525a70;
+  --line: #e2e7dd;
+  --font-body: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  --font-display: var(--font-geist-sans), Georgia, serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--paper);
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 3px solid var(--brand-soft);
+  outline-offset: 3px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--brand);
+}
+
+.eyebrow {
+  color: var(--brand);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+}
+
+.hero-grid {
+  isolation: isolate;
+}
+
+.hero-grid::after {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  content: '';
+  pointer-events: none;
+  background-image: linear-gradient(rgba(255, 255, 255, .04) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, .04) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: linear-gradient(to bottom, black, transparent);
+}
+
+.premium-header {
+  box-shadow: 0 4px 25px rgba(16, 16, 91, .06);
+}
+
+.brand-mark {
+  box-shadow: 0 8px 20px rgba(36, 169, 0, .25);
+}
+
+.premium-cta {
+  box-shadow: 0 8px 20px rgba(36, 169, 0, .22);
+  transition: all .25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.premium-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(36, 169, 0, .35);
+  background: var(--brand-hover);
+}
+
+.nav-link {
+  position: relative;
+  transition: color .2s ease;
+}
+
+.nav-link::after {
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  content: '';
+  border-radius: 2px;
+  background: var(--brand);
+  transition: width .25s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* BetterHope Style Quick Donation Bar */
+.donation-bar-container {
+  background: #ffffff;
+  border-radius: 1.25rem;
+  box-shadow: 0 20px 50px rgba(16, 16, 91, 0.12);
+  border: 1px solid var(--line);
+  overflow: hidden;
+}
+
+.donation-bar-header {
+  background: var(--brand);
+  color: white;
+  padding: 1.25rem 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.donation-preset-btn {
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.75rem;
+  font-weight: 700;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+}
+
+.donation-preset-btn:hover,
+.donation-preset-btn.active {
+  background: white;
+  color: var(--brand-deep);
+  border-color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.donation-card {
+  transition: box-shadow .3s ease, transform .3s ease;
+}
+
+.donation-card:hover {
+  box-shadow: 0 24px 60px rgba(16, 16, 91, .14);
+  transform: translateY(-3px);
+}
+
+/* Progress bar animation */
+.progress-bar-fill {
+  transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Video Reels Card */
+.reel-card {
+  position: relative;
+  aspect-ratio: 9/16;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(16, 16, 91, 0.15);
+  transition: all 0.35s ease;
+  cursor: pointer;
+}
+
+.reel-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(16, 16, 91, 0.25);
+}
+
+.reel-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+
+.reel-card:hover img {
+  transform: scale(1.08);
+}
+
+.reel-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(16, 16, 91, 0.95) 0%, rgba(16, 16, 91, 0.3) 50%, transparent 100%);
+}
+
+.play-badge {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 9999px;
+  background: var(--brand-soft);
+  color: var(--brand-deep);
+  display: grid;
+  place-items: center;
+  box-shadow: 0 6px 20px rgba(255, 242, 0, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.reel-card:hover .play-badge {
+  transform: scale(1.15);
+}
+
+/* Gallery slider mask */
+.gallery-mask {
+  overflow: hidden;
+  cursor: grab;
+  user-select: none;
+}
+
+.gallery-mask:active {
+  cursor: grabbing;
+}
+
+.activity-track {
+  display: flex;
+  width: max-content;
+  gap: 1.25rem;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+}
